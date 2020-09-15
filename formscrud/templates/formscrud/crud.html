@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>read</title>
+</head>
+<body>
+    <a href="{% url 'create' %}"> 글쓰기 </a>
+    
+    {% for blog in blogs %}
+    <h2>{{blog.title}}</h2>
+    <h4>{{blog.user}}</h4>
+    <p>{{blog.content}}</p>
+    <a href="{% url 'update' blog.id %}"> 수정 </a>
+    <a href="{% url 'delete' blog.id %}"> 삭제 </a>
+
+    <hr>
+
+    {% endfor %}
+
+</body>
+</html>
